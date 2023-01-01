@@ -1,5 +1,5 @@
 <script setup>
-  let message = 'Hello World'
+  let message = 'Hello Worl'
 
   const upperCase = () => {
     message = message.toUpperCase()
