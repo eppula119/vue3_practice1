@@ -1,14 +1,28 @@
 <script setup>
-  let message = 'Hello Worl'
+import {ref} from 'vue'
+const message = ref('Hello World');
 
-  const upperCase = () => {
-    message = message.toUpperCase()
-  }
-
-  upperCase()
+const clickButton = () => {
+  console.log(message.value);
+};
 </script>
 
 <template>
-  <h1>Vue 3 入門練習</h1>
-  <p v-text="message"></p>
+  <h1>Vue 3 入門</h1>
+  <p>{{ message }}</p>
+  <input :value="message" @input="message = $event.target.value" />
+  <div><button @click="clickButton">Click</button></div>
 </template>
+
+<style>
+  .active {
+    color: red;
+    font-weight: 900
+  }
+  .underLine {
+    text-decoration: underline;
+  }
+  .back {
+    background-color: black;
+  }
+</style>
