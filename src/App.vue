@@ -1,18 +1,17 @@
 <script setup>
-import {ref} from 'vue'
-const message = ref('Hello World');
+import { ref, watchEffect } from 'vue';
 
-const clickButton = () => {
-  console.log(message.value);
-};
+const count = ref(0);
+const count2 = ref(100);
+watchEffect(() => console.log(`${count.value}/${count2.value}`));
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <p>{{ message }}</p>
-  <input :value="message" @input="message = $event.target.value" />
-  <div><button @click="clickButton">Click</button></div>
+  <button @click="count++">Count:{{ count }}</button>
+  <button @click="count2++">Count2:{{ count2 }}</button>
 </template>
+
 
 <style>
   .active {
