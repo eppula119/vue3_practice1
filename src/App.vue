@@ -1,17 +1,16 @@
 <script setup>
 import Hello from './components/HelloWorld.vue';
-import { ref } from 'vue';
-
-const name = ref('John');
+import { ref } from 'vue'
+const name = ref('john')
 const changeName = () => {
-  name.value = 'ssss'
-}
+  console.log('子コンポーネントからの通知');
+  name.value = 'Ken'
+};
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <Hello :name="name" />
-  <button @click="changeName">Change Name</button>
+  <Hello v-on:changeNameEvent="changeName" :name="name"/>
 </template>
 
 <style>
