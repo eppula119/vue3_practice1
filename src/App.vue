@@ -10,14 +10,13 @@ const address = ref('');
 
 <template>
   <h1>Vue 3 入門</h1>
-  <User>
-    <template v-slot:header="slotProps">
-      <div>{{ slotProps }}</div>
-    </template>
-    <template v-slot:default="slotProps">
-      <div>{{ slotProps }}</div>
-    </template>
-  </User>
+  <ul>
+    <User>
+      <template v-slot="{ user }">
+        <li>{{ user.id }}</li>
+      </template>
+    </User>
+  </ul>
 </template>
 
 <style>
