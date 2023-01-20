@@ -3,13 +3,6 @@
 </script>
 
 <template>
-  <div>
-    <slot name="title">ユーザー</slot>
-  </div>
-  <div>
-    <slot>コンテンツ</slot>
-  </div>
-  <div>
-    <slot name="actions">アクション</slot>
-  </div>
+  <slot name="header" message="ヘッダー"></slot>
+  <slot message="ユーザ" content="コンテント"></slot>
 </template>
