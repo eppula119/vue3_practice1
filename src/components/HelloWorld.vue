@@ -9,7 +9,6 @@ const name = ref(props.name);
 
 const emit = defineEmits({
   changeNameEvent: (name) => {
-    console.log('name:', name);
     return false;
   }
 })
