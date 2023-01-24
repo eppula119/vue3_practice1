@@ -3,6 +3,8 @@ import { ref } from 'vue';
 import Input from './components/Input.vue';
 import Hellow from './components/HelloWorld.vue';
 import User from './components/User.vue';
+import Tokyo from './components/Tokyo.vue';
+import Kyoto from './components/Kyoto.vue';
 
 const name = ref('John Doe');
 const address = ref('');
@@ -16,6 +18,8 @@ const address = ref('');
         <li>{{ user.id }}</li>
       </template>
     </User>
+    <Tokyo />
+    <Kyoto />
   </ul>
 </template>
 
