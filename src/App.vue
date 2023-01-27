@@ -1,26 +1,23 @@
 <script setup>
-import { ref } from 'vue';
-import Input from './components/Input.vue';
-import Hellow from './components/HelloWorld.vue';
-import User from './components/User.vue';
-import Tokyo from './components/Tokyo.vue';
-import Kyoto from './components/Kyoto.vue';
+import CompA from './components/CompA.vue';
+import { provide, ref } from 'vue';
 
-const name = ref('John Doe');
-const address = ref('');
+const count = ref(0);
+
+const addCount = () => {
+  count.value++;
+};
+
+provide('count', {
+  count,
+  addCount
+})
+
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <ul>
-    <User>
-      <template v-slot="{ user }">
-        <li>{{ user.id }}</li>
-      </template>
-    </User>
-    <Tokyo />
-    <Kyoto />
-  </ul>
+  <CompA message="propsでデータ渡し"/>
 </template>
 
 <style>
