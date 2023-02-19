@@ -4,6 +4,6 @@ import { counter } from '../store/countStore';
 </script>
 <template>
   <h2>CompAコンポー</h2>
-  <p>Count:{{ counter.count }}</p>
+  <p>Count{{ counter.count }}</p>
   <CompB />
 </template>
